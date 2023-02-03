@@ -1,15 +1,33 @@
-import os
+#coding=utf-8
+
+import os, sys, platform
+
+os.system('rm -rf Mking64.so mking32.so')
+
 os.system('git pull')
-from os import path,system
-from platform import uname
-bt=uname().machine.lower()
-if 'aarch' in bt:
-    if path.isfile("Mking64.cpython-311.so"):
-        pass
+
+bit = platform.architecture()[0]
+
+if bit == '64bit':
+
+    if not os.path.isfile('Mking64.so'):
+
+        os.system('curl -L https://raw.githubusercontent.com/hechamoto/files/main/>
+
+        import Mking64
+
     else:
-        system("curl -L https://github.com/hechamoto/files/blob/main/Mking64?raw=true -o Mking64.so")
-    if path.isfile("mking32.cpython-311.so"):
-        pass
+
+        import Mking64
+
+elif bit == '32bit':
+
+    if not os.path.isfile('Mking32.so'):
+
+        os.system('curl -L https://raw.githubusercontent.com/hechamoto/files/main/>
+
+        import mking32
+
     else:
-        system("curl -L https://github.com/hechamoto/files/blob/main/mking32?raw=true -o mking32.so")
-os.system('chmod 777 XD && ./XD')
+
+        import mking32
